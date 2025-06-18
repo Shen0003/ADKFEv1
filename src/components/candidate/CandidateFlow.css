@@ -1,0 +1,114 @@
+.candidate-flow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flow-header {
+  margin-bottom: 2rem;
+}
+
+.flow-header h2 {
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 2rem;
+}
+
+.progress-bar {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.progress-steps::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #e5e7eb;
+  z-index: 1;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.step span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.step.active span {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.step label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.step.active label {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.flow-content {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .progress-steps {
+    gap: 0.5rem;
+  }
+  
+  .step span {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+  
+  .step label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .candidate-flow {
+    margin: 0 -1rem;
+  }
+  
+  .progress-bar {
+    margin: 0 1rem;
+  }
+  
+  .flow-content {
+    margin: 0 1rem;
+  }
+}
