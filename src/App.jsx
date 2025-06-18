@@ -4,6 +4,9 @@ import Layout from './components/shared/Layout';
 import Login from './components/auth/Login';
 import CandidateFlow from './components/candidate/CandidateFlow';
 import HRDashboard from './components/hr/HRDashboard';
+import ApplicationStatus from './components/candidate/ApplicationStatus';
+import AIInterview from './components/candidate/AIInterview';
+import TestAPI from './components/candidate/TestApi';
 import './App.css';
 
 function AppContent() {
@@ -28,10 +31,15 @@ function App() {
   return (
     <AppProvider>
       <Router>
-        <Routes>
-          <Route path="/" element={<AppContent />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<AppContent />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/application-status" element={<Layout><ApplicationStatus /></Layout>} />
+            <Route path="/interview" element={<Layout><AIInterview /></Layout>} />
+            <Route path='/test-api' element={<Layout><TestAPI /></Layout>} />
+          </Routes>
+        </div>
       </Router>
     </AppProvider>
   );
