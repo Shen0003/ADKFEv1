@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f5f7fa;
+  background-color: lightgray;
 }
 
 .header {
@@ -108,10 +108,10 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: #f5f7fa;
+  background-color: #a90505;
   border: none;
   border-radius: 6px;
-  color: #666;
+  color: white;
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.95rem;

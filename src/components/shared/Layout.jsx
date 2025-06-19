@@ -78,7 +78,7 @@ export default function Layout({ children }) {
                 <span className="user-name">{state.user.name}</span>
               </div>
               <button onClick={handleLogout} className="logout-btn">
-                <span className="logout-icon">🚪</span>
+                {/* <span className="logout-icon">🚪</span> */}
                 Logout
               </button>
             </div>

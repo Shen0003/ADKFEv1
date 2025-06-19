@@ -20,8 +20,7 @@ export default function CandidateFlow() {
     switch (currentStep) {
       case 'jobs': return 1;
       case 'application': return 2;
-      case 'interview': return 3;
-      case 'status': return 4;
+      case 'status': return 3;
       default: return 1;
     }
   };
@@ -48,18 +47,19 @@ export default function CandidateFlow() {
             onBack={() => setCurrentStep('jobs')}
           />
         );
+      case 'status':
+        // Only allow interview if eligible
+        return (
+          <StatusDisplay
+            application={userApplication}
+            onStartInterview={() => setCurrentStep('interview')}
+          />
+        );
       case 'interview':
         return (
           <AIInterview
             application={userApplication}
             onInterviewComplete={() => setCurrentStep('status')}
-          />
-        );
-      case 'status':
-        return (
-          <StatusDisplay
-            application={userApplication}
-            onStartInterview={() => setCurrentStep('interview')}
           />
         );
       default:
@@ -83,10 +83,6 @@ export default function CandidateFlow() {
             </div>
             <div className={`step ${getStepNumber() >= 3 ? 'active' : ''}`}>
               <span>3</span>
-              <label>Interview</label>
-            </div>
-            <div className={`step ${getStepNumber() >= 4 ? 'active' : ''}`}>
-              <span>4</span>
               <label>Status</label>
             </div>
           </div>
