@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const BACKEND_URL = "https://adkbev2.onrender.com/"; // deployed FastAPI backend
+const BACKEND_URL = "https://adkbev2.onrender.com"; // deployed FastAPI backend
 
 const TestAPI = () => {
   const navigate = useNavigate();
